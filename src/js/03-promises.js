@@ -27,7 +27,7 @@ function onClick(e) {
     if (position != 1) {
       delay += step;
     }
-    
+
     createPromise(position, delay)
       .then(({ position, delay }) => {
         Notify.success(`Fulfilled promise ${position} in ${delay}ms`);

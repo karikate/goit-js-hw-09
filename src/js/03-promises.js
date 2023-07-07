@@ -7,18 +7,18 @@ const inputAmountEl = document.querySelector("form.form input[name='amount']");
 
 formEl.addEventListener('submit', onClick);
 
-// function checkValue() {
-//   if (Number(inputAmountEl.value) < 0) {
-//     Notify.warning(
-//       'The amount cannot be negative. Please enter the correct amount.'
-//     );
-//     formEl.reset;
-//   }
-// }
+function checkValue() {
+  if (Number(inputAmountEl.value) < 0) {
+    Notify.warning(
+      'The amount cannot be negative. Please enter the correct amount.'
+    );
+    formEl.reset;
+  }
+}
 
 function onClick(e) {
   e.preventDefault();
-  // checkValue();
+  checkValue();
   let delay = Number(inputDelayEl.value);
   const step = Number(inputStepEl.value);
   const amount = Number(inputAmountEl.value);
@@ -44,9 +44,9 @@ function createPromise(position, delay) {
     setInterval(() => {
       const shouldResolve = Math.random() > 0.3;
       if (shouldResolve) {
-        res({ position, delay });
+        res();
       } else {
-        rej({ position, delay });
+        rej();
       }
     }, delay);
   });

@@ -45,9 +45,9 @@ function createPromise(position, delay) {
     setInterval(() => {
       const shouldResolve = Math.random() > 0.3;
       if (shouldResolve) {
-        res();
+        res({ position, delay });
       } else {
-        rej();
+        rej({ position, delay });
       }
     }, delay);
   });

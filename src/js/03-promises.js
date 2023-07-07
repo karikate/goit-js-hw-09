@@ -22,8 +22,9 @@ function onClick(e) {
   let delay = Number(inputDelayEl.value);
   const step = Number(inputStepEl.value);
   const amount = Number(inputAmountEl.value);
+  const position = null;
 
-  for (let position = 1; position <= amount; position++) {
+  for (position = 1; position <= amount; position++) {
     if (position != 1) {
       delay += step;
     }
